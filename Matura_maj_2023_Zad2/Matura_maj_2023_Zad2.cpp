@@ -3,11 +3,15 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 
 using namespace std;
 
-int zad2_1(int n) {
+//ifstream plik("bin_przyklad.txt");
+ifstream plik("bin.txt");
+
+int liczba_blokow(int n) {
     int b = 1;
     int poprz = n % 2;
     n = n / 2;
@@ -18,24 +22,24 @@ int zad2_1(int n) {
         }
         n = n / 2;
         poprz = cyfra;
-        cout << poprz << endl;
     }
     return b;
 }
 
-ifstream we("bin_przyklad.txt");
-//ifstream we("bin.txt");
-
-
 int main()
 {
-    cout << zad2_1(67) << endl;
-    cout << zad2_1(245) << endl;
+    cout << "zad2.1"<< endl;
+    cout << liczba_blokow(67) << endl;
+    cout << liczba_blokow(245) << endl;
 
+    cout << "zad2.2" << endl;
     string liczba;
+    int ile2blok=0;
 
     for (int i = 0; i < 100; i++) {
-        liczba = we.getline;
-        zad2_1(stoi(liczba));
+        getline(plik, liczba);
+        int n = stoi(liczba, nullptr, 2);
+        if (liczba_blokow(n)<=2) ile2blok++;
     }
+    cout << ile2blok;
   }
