@@ -96,7 +96,7 @@ int main()
     plik.seekg(0);
     cout << "zad2.5" << endl;
     while (getline(plik, binarna)) {
-        string pol_binarnej = na_binarny(floor(stoi(binarna,nullptr,2) / 2));
+        string pol_binarnej = na_binarny(floor(stoi(binarna,nullptr,2) / 2)); //floor nie jest konieczne
         cout << XOR(binarna, pol_binarnej) << endl;
         }
 }
